@@ -27,7 +27,3 @@ To create a visually appealing and user-friendly interface that reflects the cul
 - Implemented responsiveness for cross-device compatibility
 - Collaborated with backend team to connect APIs (if applicable)
 
-## 📸 Screenshots
-_Add screenshots of the homepage, product page, and cart here (optional but recommended)._
-
-## 📁 Folder Structure
