@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>add address</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #dbdecd;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .firstnav {
+            background-color: #515729;
+            /* background-color:#FFCDD4 ; */
+            /* padding: 20px; */
+            padding: 2px 20px;
+        }
+
+        .firstnav h2 {
+            color: white;
+            /* color: black; */
+        }
+
+        /* .navitemicon button {
+            background-color: white;
+        } */
+        .searchform {
+            position: relative;
+        }
+
+        .searchform i {
+            position: absolute;
+            right: 10px;
+            top: 0;
+        }
+
+        .navitemicon i {
+
+            font-size: 20px;
+            line-height: 40px;
+            color: white;
+            /* color: black; */
+        }
+
+        .page1 {
+
+            padding: 0%;
+        }
+
+        .navbaranimation {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: 3;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            /* color: white;    */
+            padding-left: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        /* .dropdown:hover {
+            background-color: #ddd;
+        } */
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+        /* .dropdown:hover button {
+            font-weight: bold;
+        } */
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f3f4e8;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* form */
+
+        .inp input {
+            border-bottom: 2px solid #3e402d;
+        }
+
+        .btnrow {
+            background-color: #515729;
+            cursor: pointer;
+        }
+
+        .logcol {
+            border: 1px solid #3e402d;
+            box-shadow: 2px 2px 5px gray;
+        }
+
+        .btntext {
+            color: white;
+        }
+
+
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #515729;
+            border-color: white;
+        }
+
+        .inp label {
+            font-size: 20px;
+        }
+
+        ::placeholder {
+            font-size: 15px;
+        }
+
+        .inputbox i {
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+            color: #3e402d;
+        }
+
+        .inputbox {
+            position: relative;
+        }
+
+        .btn1 {
+            background-color: #515729;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .mainform table thead tr th {
+            padding: 20px;
+            background-color: #e4e8cf;
+            text-align: center;
+        }
+
+        .mainform table tbody tr td {
+            vertical-align: middle
+        }
+
+        /* footer */
+
+        .links p a {
+            color: #dbdecd;
+            font-size: 17px;
+        }
+
+        .links p a:hover {
+            color: #3e402d;
+            font-size: 17px;
+        }
+
+        .icons i {
+            color: #dbdecd;
+        }
+
+        .icons i:hover {
+            transform: scale(1.4);
+            transition: 0.5s;
+        }
+
+        @media screen and (max-width:1060px) {
+            .firstcol {
+                display: flex;
+            }
+        }
+
+        @media screen and (max-width:963px) {
+            .firstcol {
+                display: block;
+
+            }
+        }
+
+        form label {
+            margin-bottom: 5px;
+        }
+        .inp input{
+            border-bottom: 2px solid #6f7247;
+        }
+        .inp select{
+            border-bottom: 2px solid #6f7247;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid page1">
+        <div class="row">
+            <nav class="navbar firstnav">
+                <div class="container-fluid container1">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo/final.png" alt="" style="height: 70px;">
+                        <!-- <h2>INDIAN TRADITION</h2> -->
+                    </a>
+                    <div class="d-flex gap-3 pt-3 navitemicon">
+                        <a href="index.html" style="text-decoration: none; color: white;">
+                            <p class="rounded border" style=" padding: 8px 10px;font-size: 14px;">HOME</p>
+                        </a>
+                        <form class="searchform " role="search">
+                            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                            <i class="fa-solid fa-magnifying-glass" style="color: black; font-size: 15px;"></i>
+                        </form>
+                        <a href="login.html" style="text-decoration: none; color: #515729;">
+                            <p class="rounded" style="background-color: white; padding: 8px 10px; font-size: 14px;">
+                                LOGIN</p>
+                        </a>
+
+                        <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
+                        <a href="cart.html"> <i class="fa-solid fa-cart-shopping "></i></a>
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 p-2 gap-2 mx-auto ">
+                            <li>
+                                <div class="dropdown main-dropdown">
+                                    <button class="dropbtn px-1">Handicraft</button>
+
+                                    <div class="dropdown-content" style="width: 200%;">
+                                        <a href="#">Pottery and Ceramics</a>
+                                        <a href="#">Woodcraft</a>
+                                        <a href="#">Metal Crafts</a>
+                                        <a href="#">Leather Craft</a>
+                                        <a href="#">Stone Craft</a>
+                                        <a href="#">Paper and Pulp Crafts</a>
+                                        <a href="#">Glasswork</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <a href="product.html"><button class="dropbtn px-1">Jewellery</button></a>
+                                    <div class="dropdown-content" style="width: 250%;">
+                                        <a href="#">Stone Jewellery</a>
+                                        <a href="#">Floral Jewellery</a>
+                                        <a href="#">Beads Jewellery</a>
+                                        <a href="#">Oxides Jewellery</a>
+                                        <a href="#">Thread Jewellery</a>
+                                        <a href="#">Paper Quilling Jewellery</a>
+                                        <a href="">Wooden Jewellery</a>
+                                        <a href="">Personalized Jewellery</a>
+                                        <a href="">Occasion-Specific Jewellery</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn px-1">Handloom</button>
+                                    <div class="dropdown-content" style="width: 300%;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <p class="m-2" style=" font-weight: 600;color: #3e402d;">Home Textile
+                                                </p>
+                                                <a href="#">Sarees</a>
+                                                <a href="">Shawls and Stoles</a>
+                                                <a href="">Dupattas</a>
+                                                <a href="">Kurtis and Tunics</a>
+                                                <a href="">Fabrics</a>
+                                            </div>
+                                            <div>
+                                                <p class="m-2" style="font-weight: 600;color: #3e402d;">Kitchen Linens
+                                                </p>
+                                                <a href="">Aprons</a>
+                                                <a href=""> Towels</a>
+                                                <a href=""> Pot Holders</a>
+                                                <a href="">Kitchen Curtains</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown ">
+                                    <button class="dropbtn px-1">Handbags</button>
+                                    <div class="dropdown-content" style="width: 150%;">
+                                        <a href="#">Wooden Bags</a>
+                                        <a href="#">Leather Bags</a>
+                                        <a href="#">Straw Bags</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn px-1">Toys & Gifts</button>
+                                    <div class="dropdown-content" style="width: 300%;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <p class="m-2" style="font-weight: 600;color: #3e402d;">Toys</p>
+                                                <a href="#">Wooden Toys</a>
+                                                <a href="">Soft Toys</a>
+                                                <a href="">Musical Toys</a>
+                                                <a href="">Educational Toys</a>
+                                            </div>
+                                            <div>
+                                                <p class="m-2" style="font-weight: 600;color: #3e402d;">Gifts</p>
+                                                <a href="">Seasonal Gifts</a>
+                                                <a href="">Customized Gifts</a>
+                                                <a href="">Wax Shaped Gifts</a>
+                                                <a href="">Greeting Cards</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn px-1">Decoration</button>
+                                    <div class="dropdown-content" style="width: 250%;">
+                                        <a href="#">Wall Decor</a>
+                                        <a href="#">Tabletop</a>
+                                        <a href="#">Holiday And Seasonal Decor</a>
+                                        <a href="">Artifical Flowers</a>
+                                        <a href="">Lighting</a>
+                                        <a href="">Rangoli Design & Essentials</a>
+                                        <a href="">Door Mat</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn px-1">Carpet Waving</button>
+
+                                    <div class="dropdown-content" style="width: 150%;">
+                                        <a href="#">Woolen Carpets</a>
+                                        <a href="#">Silk Carpets</a>
+                                        <a href="#"> Cotton Carpets</a>
+                                        <a href=""> Jute Carpets</a>
+                                        <a href="">Synthetic Fiber Carpets</a>
+                                        <a href=""> Blend Carpets</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn      px-1 ">Soaps & Beauty</button>
+                                    <div class="dropdown-content" style="width: 300%;">
+                                        <div class="d-flex">
+                                            <div>
+                                                <p class="m-2" style="font-weight: 600;color: #3e402d;">Skin</p>
+                                                <a href="#">Organic & Natural Soaps</a>
+                                                <a href="">Customized Soaps</a>
+                                            </div>
+                                            <div>
+                                                <p class="m-2" style="font-weight: 600;color: #3e402d;">Hair</p>
+                                                <a href="">Ayurvedic Hair Oil</a>
+                                                <a href=""> Herbel Oil</a>
+                                                <a href="">Coconut Oil-Based Hair Oil</a>
+                                                <a href="">Ayurvedic Shampoo</a>
+                                                <a href="">Herbel Shampoo</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn px-1 ">HomeMade Food</button>
+
+                                    <div class="dropdown-content" style="width: 150%;">
+                                        <a href="">Preserved Packet Foods</a>
+                                        <a href="">Candies</a>
+                                        <a href="">Cookies</a>
+                                        <a href="">Special Dietary Items</a>
+                                        <a href="">Flour & Premix</a>
+                                        <a href="">Meal Kits</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn px-1  ">Spritual</button>
+                                    <div class="dropdown-content" style="width: 200%;">
+                                        <a href="#">Torans</a>
+                                        <a href="#">Wall Hanging</a>
+                                        <a href="#">Pooja Essantials</a>
+                                        <a href="">Diya</a>
+                                        <a href="">Stone & Crystals</a>
+                                        <a href="">Idols</a>
+                                        <a href="">Religious Books</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown  ">
+                                    <button class="dropbtn px-1">Utensils</button>
+                                    <div class="dropdown-content me-auto">
+                                        <a href="#">Wooden</a>
+                                        <a href="#">Clay</a>
+                                        <a href="">Bamboo</a>
+                                        <a href="">teracotta</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid maincont p-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-sm-10 col-10 mt-5 mb-5">
+                <form action="">
+                    <h2 class="py-3 text-center" style="color: #3e402d;">Add Your Address</h2>
+                    <div class="inp mb-3 mt-3">
+                        <label for="name">Full name (First and Last name):</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name">
+                    </div>
+                    <div class="inp mb-3">
+                        <label for="num">Mobile number:</label>
+                        <input type="number" class="form-control" id="num" placeholder="Enter Mobile Number" name="num">
+                    </div>
+                    <div class="inp mb-3">
+                        <label for="add">Flat, House no., Building, Company, Apartment:</label>
+                        <input type="text" class="form-control" id="add"
+                            placeholder="Enter Flat, House no., Building, Company, Apartment " name="add">
+                    </div>
+                    <div class="inp mb-3">
+                        <label for="area">Area, Street, Sector, Village:</label>
+                        <input type="text" class="form-control" id="area"
+                            placeholder="Enter Area, Street, Sector, Village" name="area">
+                    </div>
+                    <div class="inp mb-3">
+                        <label for="lmark">Landmark:</label>
+                        <input type="text" class="form-control" id="lmark" placeholder="Enter Landmark" name="lmark">
+                    </div>
+                    <div class="inp mb-3">
+                        <label for="area">Town/City:</label>
+                        <input type="text" class="form-control" id="area" placeholder="Enter City" name="area">
+                    </div>
+                    <div class="inp mb-3">
+                        <label for="pin">Pincode:</label>
+                        <input type="number" class="form-control" id="pin" placeholder="6 digit [0-9] PIN code" name="pin">
+                    </div>
+
+                    <div class="inp">
+                    <label for="sel1" class="form-label">Select list (select one):</label>
+                    <select class="form-select" id="sel1" name="sellist1">
+                        <option>Select State</option>
+                        <option>Maharashtra</option>
+                        <option>Assam</option>
+                        <option>Manipur</option>
+                        <option>Bihar</option>
+                        <option>Gujarat</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Haryana</option>
+                        <option>Rajasthan</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Chhattisgarh</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Andhra Pradesh</option>
+                        <option> Punjab</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Telangana</option>
+                        <option>Odisha</option>
+                        <option>Nagaland</option>
+                        <option>Mizoram</option>
+                        <option>Goa</option>
+                        <option>Jharkhand</option>
+                        <option>West Bengal</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Meghalaya</option>
+                        <option>Sikkim</option>
+                        <option>Delhi</option>
+                        <option>Uttarakhand</option>
+                        <option>Tripura</option>
+                        <option>Jammu & Kashmir</option>
+
+                    </select>
+                </div>
+
+                    <div class=" form-check mb-3 mt-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="remember">Make this my default address
+                        </label>
+                    </div>
+
+                    <div class="addcart mt-5 text-center">
+                      <button class="btn  px-4" style="background-color: #515729;">  <a style="color: white;text-decoration: none;" href="payment.html"> Save</a>
+                                </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class=" text-white pt-2" style="background-color: #515729">
+        <div class="container-fluid  text-center text-md-left">
+            <div class="row text-center text-md-left mx-5">
+
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" style=" text-align: left;">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #dbdecd;">INDIAN TRADITION</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum eligendi dolor impedit ex
+                        deserunt consequuntur minus eos, dolores fuga nihil!</p>
+                </div>
+
+
+                <div class="col-md-4 col-lg col-xl-3 links mx-auto mt-3 " style=" text-align: left;">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #dbdecd;">Useful links</h5>
+                    <p>
+                        <a href="index.html" style="text-decoration: none;"><i class="fa-solid fa-angle-right"></i>
+                            Home</a>
+                    </p>
+                    <p>
+                        <a href="wishlist.html" style="text-decoration: none;"> <i
+                                class="fa-solid fa-angle-right"></i> Favourite</a>
+                    </p>
+                    <p>
+                        <a href="orders.html" style="text-decoration: none;"><i class="fa-solid fa-angle-right"></i>
+                            My Orders</a>
+                    </p>
+                    <p>
+                        <a href="profile.html" style="text-decoration: none;"><i class="fa-solid fa-angle-right"></i>
+                            Profile</a>
+                    </p>
+                    <!-- <p>
+                        <a href="#" style="text-decoration: none;"><i class="fa-solid fa-angle-right"></i>
+                            Decoration</a>
+                    </p>
+                    <p>
+                        <a href="" style="text-decoration: none;"><i class="fa-solid fa-angle-right"></i>
+                            Toys</a>
+                    </p> -->
+           
+
+
+                </div>
+
+
+
+                <div class="col-md-5 col-lg-2 col-xl-3 mx-auto mt-3" style="text-align: left;">
+                    <h5 class="text-uppercase mb-4 font-weight-bold " style="color: #dbdecd;">Contact</h5>
+                    <p>
+                        <i class="fas fa-home mr-3"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Maxime, vero!
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> contact@www.in
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> +92 31628594453
+                    </p>
+                    <p>
+                        <i class="fas fa-print mr-3"></i> +01 335 2345675
+                    </p>
+                </div>
+
+            </div>
+            <div class="row" style="background-color: #6f7247">
+
+                <div class="col-xl-12 icons">
+                    <a href=""><i class="fa-brands fa-facebook-f  p-4 fs-5"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter p-4 fs-5"></i></a>
+                    <a href=""> <i class="fa-brands fa-pinterest p-4 fs-5"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram p-4 fs-5"></i></a>
+                    <a href=""> <i class="fa-brands fa-google p-4 fs-5"></i></a>
+                    <a href=""> <i class="fa-brands fa-youtube p-4 fs-5"></i></a>
+                </div>
+                <p style="color: #dbdecd">&copy; COPYRIGHT 2024 RESERVED BY MANASVI TECH  SOLUTIONS PVT. LTD.</p>
+
+            </div>
+    </footer>
+</body>
+
+</html>
